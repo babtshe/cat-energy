@@ -1,0 +1,70 @@
+{{#> layout program-page="true"}}
+{{#*inline "main-block"}}
+<section class="program-form">
+  <h1 class="program-form__title">Подбор программы</h1>
+  <form action="https://echo.htmlacademy.ru" class="form-food" method="post">
+    <p class="program-form__slogan">Заполните анкету и мы подберем программу питания для вашего кота</p>
+    <div class="form-food__field">
+      <label for="input-name" class="form-food__label">Имя:*</label>
+      <input class="form-food__input-text form-food__input-text--name" type="text" name="name" id="input-name" placeholder="Барсик" required>
+    </div>
+    <div class="form-food__field">
+      <label for="input-weight" class="form-food__label">Вес (кг):*</label>
+      <input class="form-food__input-text form-food__input-text--weight" type="text" name="weight" id="input-weight" placeholder="7" required>
+    </div>
+    <div class="form-food__field">
+      <label for="input-age" class="form-food__label">Возраст (лет):</label>
+      <input class="form-food__input-text form-food__input-text--age" type="text" name="age" id="input-age" placeholder="7">
+    </div>
+    <div class="form-food__radio-wrapper">
+      <div class="form-food__field">
+        <input class="form-food__input-radio" type="radio" name="program-type" id="radio-1" value="Похудение" checked>
+        <label for="radio-1" class="form-food__label form-food__label--radio">Похудение</label>
+      </div>
+      <div class="form-food__field">
+        <input class="form-food__input-radio" type="radio" name="program-type" id="radio-2" value="Набор массы">
+        <label for="radio-2" class="form-food__label form-food__label--radio">Набор массы</label>
+      </div>
+      <div class="form-food__field">
+        <input class="form-food__input-radio" type="radio" name="program-type" id="radio-3" value="Нужен совет">
+        <label for="radio-3" class="form-food__label form-food__label--radio">Не знаю (нужен ваш совет)</label>
+      </div>
+    </div>
+    <h3 class="form-food__section-header">Контактные данные (владельца кота)</h3>
+    <div class="form-food__field">
+        <label for="e-mail" class="form-food__label">E-Mail:*</label>
+        <input class="form-food__input-text form-food__input-text--email" type="email" name="e-mail" id="e-mail" placeholder="kuklachev@gmail.com" required>
+    </div>
+     <div class="form-food__field">
+        <label for="phone" class="form-food__label">Телефон:*</label>
+        <input class="form-food__input-text form-food__input-text--phone" type="tel" name="phone" id="phone" placeholder="8(960)900-60-90" required>
+    </div>
+    <h3 class="form-food__section-header">Комментарий</h3>
+    <textarea class="form-food__input-textarea" name="cat-behavior" id="cat-behavior" cols="30" rows="10" placeholder="Расскажите обо всех повадках кота"></textarea>
+    <h3 class="form-food__section-header">Допонительно</h3>
+    <div class="form-food__checkbox-wrapper">
+      <div class="form-food__field">
+        <input class="form-food__input-checkbox" type="checkbox" name="accessories" id="checkbox-1" value="Сахарозаменитель" checked>
+        <label for="checkbox-1" class="form-food__label form-food__label--checkbox">Сахарозаменитель</label>
+      </div>
+       <div class="form-food__field">
+        <input class="form-food__input-checkbox" type="checkbox" name="accessories" id="checkbox-2" value="Питьевая вода">
+        <label for="checkbox-2" class="form-food__label form-food__label--checkbox">Питьевая вода</label>
+      </div>
+      <div class="form-food__field">
+        <input class="form-food__input-checkbox" type="checkbox" name="accessories" id="checkbox-3" value="Молоко">
+        <label for="checkbox-3" class="form-food__label form-food__label--checkbox">Молоко</label>
+      </div>
+      <div class="form-food__field">
+        <input class="form-food__input-checkbox" type="checkbox" name="accessories" id="checkbox-4" value="Витамины">
+        <label for="checkbox-4" class="form-food__label form-food__label--checkbox">Витамины</label>
+      </div>
+    </div>
+    <input class="form-food__submit" type="submit" value="Отправить заявку">
+    <p class="form-food__required-text">* — Обязательные поля</p>
+  </form>
+</section>
+
+
+{{/inline}}
+{{/layout}}

@@ -22,7 +22,7 @@ var path = {
     css: 'build/css/'
   },
   source: {
-    markup: 'source/*.hbr',
+    markup: 'source/*.hbs',
     partials: 'source/partials',
     fonts: 'source/fonts/**/*.{woff2,woff}',
     img: 'source/img/**/*.{png,jpg,svg,gif}',
@@ -30,7 +30,7 @@ var path = {
     style: 'source/scss/style.scss'
   },
   watch: {
-    markup: 'source/**/*.{html,hbr}',
+    markup: 'source/**/*.hbs',
     fonts: 'source/fonts/**/*.{woff2,woff}',
     img: 'source/img/**/*.{png,jpg,svg,gif}',
     js: 'source/js/**/*.js',

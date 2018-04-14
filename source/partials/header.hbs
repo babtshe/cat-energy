@@ -1,0 +1,25 @@
+{{!-- partials/header.hbs --}}
+<header class="page__header">
+  <nav class="page__navigation burger-menu">
+    <div class="logo logo--header burger-menu__logo">
+      <a{{#unless index-page}} href="index.html"{{/unless}} class="logo__link">
+        <img class="logo__icon" src="http://placehold.it/33x38" alt="Cat Energy logo" width="33" height="38">
+        <img class="logo__name" src="http://placehold.it/101x18" alt="Cat Energy" width="101" height="18">
+      </a>
+    </div>
+    <button class="burger-menu__toggle-btn burger-menu__toggle-btn--nojs">
+      <span class="ie-sucks visually-hidden">показать меню</span>
+    </button>
+    <ul class="burger-menu__list burger-menu__list--nojs">
+      <li class="burger-menu__item">
+        <a class="burger-menu__link"{{#unless index-page}} href="index.html"{{/unless}}>Главная</a>
+      </li>
+      <li class="burger-menu__item">
+        <a class="burger-menu__link"{{#unless catalog-page}} href="catalog.html"{{/unless}}>Каталог продукции</a>
+      </li>
+      <li class="burger-menu__item">
+        <a class="burger-menu__link"{{#unless program-page}} href="program.html"{{/unless}}>Подбор программы</a>
+      </li>
+    </ul>
+  </nav>
+</header>

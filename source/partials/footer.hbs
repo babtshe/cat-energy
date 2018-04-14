@@ -1,20 +1,18 @@
 <footer class="footer-main">
   <section class="contacts">
-    <h2 class="contacts__title visually-hidden">Контакты</h2>
-    <p class="contacts__slogan">приглашаем к сотрудничеству дилеров!</p>
-    <address class="contacts__address">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</address>
+    <div class="contacts__wrapper">
+      <h2 class="contacts__title visually-hidden">Контакты</h2>
+      <p class="contacts__slogan">приглашаем к сотрудничеству дилеров!</p>
+      <address class="contacts__address">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</address>
+    </div>
     <div class="contacts__map">
       <!-- тут будет карта -->
       <img src="http://placehold.it/320x362" alt="">
     </div>
   </section>
   <div class="logo logo--footer">
-    {{#if index-page}}
-    <a class="logo__link--footer">
-    {{else}}
-    <a href="index.html" class="logo__link--footer">
-    {{/if}}
-      <img class="logo__name--footer" src="http://placehold.it/128x24" alt="">
+    <a {{#unless index-page}}href="index.html" {{/unless}} class="logo__link logo__link--footer">
+      <img class="logo__name logo__name--footer" src="http://placehold.it/128x24" alt="">
     </a>
   </div>
   <ul class="social-list">
@@ -43,3 +41,4 @@
     </a>
   </div>
 </footer>
+

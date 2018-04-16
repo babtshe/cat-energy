@@ -1,32 +1,156 @@
-"use strict";
+var gulp = require('gulp'),
+  prefixer = require('gulp-autoprefixer'),
+  cssmin = require('gulp-clean-css'),
+  imagemin = require('gulp-imagemin'),
+  sass = require('gulp-sass'),
+  sourcemaps = require('gulp-sourcemaps'),
+  browsersync = require('browser-sync'),
+  jsmin = require('gulp-uglify'),
+  pump = require('pump'),
+  watch = require('gulp-watch'),
+  del = require('del'),
+  handlebars = require('gulp-compile-handlebars'),
+  rename = require('gulp-rename'),
+  reload = browsersync.reload;
 
-var gulp = require("gulp");
-var sass = require("gulp-sass");
-var plumber = require("gulp-plumber");
-var postcss = require("gulp-postcss");
-var autoprefixer = require("autoprefixer");
-var server = require("browser-sync").create();
+var path = {
+  build: {
+    html: 'build/',
+    fonts: 'build/fonts/',
+    img: 'build/img/',
+    js: 'build/js/',
+    css: 'build/css/'
+  },
+  source: {
+    markup: 'source/*.hbr',
+    partials: 'source/partials',
+    fonts: 'source/fonts/**/*.{woff2,woff}',
+    img: 'source/img/**/*.{png,jpg,svg,gif}',
+    js: 'source/js/script.js',
+    style: 'source/scss/style.scss'
+  },
+  watch: {
+    markup: 'source/**/*.{html,hbr}',
+    fonts: 'source/fonts/**/*.{woff2,woff}',
+    img: 'source/img/**/*.{png,jpg,svg,gif}',
+    js: 'source/js/**/*.js',
+    style: 'source/scss/**/*.scss'
+  },
+  clean: './build'
+};
 
-gulp.task("style", function() {
-  gulp.src("source/sass/style.scss")
-    .pipe(plumber())
-    .pipe(sass())
-    .pipe(postcss([
-      autoprefixer()
-    ]))
-    .pipe(gulp.dest("source/css"))
-    .pipe(server.stream());
+var config = {
+  server: {
+    baseDir: path.clean + '/'
+  },
+  tunnel: false,
+  host: 'localhost',
+  port: 3000,
+  logPrefix: 'browsersync'
+};
+
+gulp.task('default', ['build', 'webserver', 'watch']);
+
+gulp.task('html:build', function (callback) {
+  pump([
+    gulp.src(path.source.markup, {
+      nodir: true
+    }),
+    handlebars({}, {
+      ignorePartials: true,
+      batch: path.source.partials
+    }),
+    rename({
+      extname: '.html'
+    }),
+    gulp.dest(path.build.html),
+    reload({
+      stream: true
+    })
+  ], callback);
 });
 
-gulp.task("serve", ["style"], function() {
-  server.init({
-    server: "source/",
-    notify: false,
-    open: true,
-    cors: true,
-    ui: false
-  });
+gulp.task('fonts:build', function () {
+  gulp.src(path.source.fonts, {
+      nodir: true
+    })
+    .pipe(gulp.dest(path.build.fonts));
+});
 
-  gulp.watch("source/sass/**/*.{scss,sass}", ["style"]);
-  gulp.watch("source/*.html").on("change", server.reload);
+gulp.task('image:build', function () {
+  gulp.src(path.source.img)
+    //спрайты тоже тут будут собираться, но когда-нибудь потом
+    .pipe(imagemin({
+      progressive: true,
+      svgoPlugins: [{
+        removeViewBox: false
+      }],
+      interlaced: true
+    }))
+    .pipe(gulp.dest(path.build.img))
+    .pipe(reload({
+      stream: true
+    }));
+});
+
+gulp.task('js:build', function (callback) {
+  pump([ //если будут ошибки pump наябедничает
+    gulp.src(path.source.js),
+    sourcemaps.init(),
+    jsmin(),
+    sourcemaps.write(),
+    gulp.dest(path.build.js),
+    reload({
+      stream: true
+    })
+  ], callback);
+});
+
+gulp.task('style:build', function (callback) {
+  pump([
+    gulp.src(path.source.style),
+    sourcemaps.init(),
+    sass(),
+    prefixer(),
+    cssmin(),
+    sourcemaps.write(),
+    gulp.dest(path.build.css),
+    reload({
+      stream: true
+    })
+  ], callback);
+});
+
+gulp.task('build', [
+  'html:build',
+  'fonts:build',
+  'image:build',
+  'js:build',
+  'style:build'
+]);
+
+gulp.task('clean', function () {
+  del(path.clean);
+});
+
+gulp.task('webserver', function () {
+  browsersync(config);
+});
+
+gulp.task('watch', function () {
+  watch([path.watch.markup], function (event, callback) {
+    gulp.start('html:build');
+  });
+  watch([path.watch.fonts], function (event, callback) {
+    gulp.start('fonts:build');
+  });
+  watch([path.watch.img], function (event, callback) {
+    gulp.start('image:build');
+  });
+  watch([path.watch.js], function (event, callback) {
+    gulp.start('js:build');
+  });
+  watch([path.watch.style], function (event, callback) {
+    gulp.start('style:build');
+  });
 });

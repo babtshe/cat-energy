@@ -1,0 +1,75 @@
+.example {
+  padding: 17px 20px 20px 20px;
+  background-color: #f2f2f2;
+}
+
+.example__title {
+  margin: 0;
+  font-family: $font-stack;
+  font-size: 36px;
+  line-height: 60px;
+  font-weight: normal;
+  color: #111111;
+}
+
+.example__description {
+  margin-top: 24px;
+  padding-right: 5px;
+}
+
+.example__highlight-list {
+  list-style: none;
+  max-width: $media-mobile;
+  margin: 0;
+  padding: 10px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.example__highlight-value {
+  position: relative;
+  font-family: $font-stack;
+  color: #111111;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+  border: 1px solid #cdcdcd;
+  border-radius: 3px;
+  padding: 13px 0 15px 0;
+  min-width: 124px;
+  margin-bottom: 20px;
+}
+
+.example__highlight-property {
+  font-family: $font-stack-default;
+  color: $font-color-default;
+  font-size: 12px;
+  width: 87px;
+  margin: 10px 0;
+  padding: 0 10px;
+  left: 17px;
+  text-transform: none;
+  line-height: 12px;
+  position: absolute;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+.example__costs {
+  font-family: $font-stack;
+  color: #111111;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.example__slider {
+  margin-left: -20px;
+  margin-right: -20px;
+}

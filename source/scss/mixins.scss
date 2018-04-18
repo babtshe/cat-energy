@@ -1,0 +1,20 @@
+@mixin button-default($font-size: 20px, $line-height: 20px) {
+  color: $button-color;
+  background-color: $button-backcolor;
+  line-height: $line-height;
+  font-size: $font-size;
+  font-family: $font-stack;
+  text-transform: uppercase;
+  padding: 16px 25px 16px 25px;
+  text-align: center;
+
+  &:hover {
+    background-color: $button-backcolor-hover;
+  }
+
+  &:active {
+    background-color: $button-backcolor-hover;
+    color: $button-color-active;
+  }
+}
+

@@ -1,0 +1,22 @@
+.credits {
+  display: flex;
+  padding: 20px;
+  max-width: $media-mobile;
+  justify-content: space-between;
+}
+
+.credits__link {
+  font-family: $font-stack-default;
+  color: $font-color-default;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: normal;
+}
+
+.credits__text {
+  margin: 10px 0;
+}
+
+.credits__logo {
+  fill: #666666;
+}

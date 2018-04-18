@@ -1,0 +1,116 @@
+@mixin svg-common {
+  background: url("../img/sprite.svg") no-repeat;
+}
+
+@mixin sprite-htmlacademy {
+  @include svg-common;
+  background-position: 0 100%;
+  width: 60px;
+  height: 60px;
+}
+
+@mixin sprite-icon-cat-pro {
+  @include svg-common;
+  background-position: 0 31.074380165289256%;
+  width: 134px;
+  height: 56px;
+}
+
+@mixin sprite-icon-cat-slim {
+  @include svg-common;
+  background-position: 99.68586387434554% 0;
+  width: 70px;
+  height: 97px;
+}
+
+@mixin sprite-icon-close {
+  @include svg-common;
+  background-position: 64.93827160493828% 58.867924528301884%;
+  width: 18px;
+  height: 18px;
+}
+
+@mixin sprite-icon-fb-mobile {
+  @include svg-common;
+  background-position: 58.88446215139443% 59.24050632911393%;
+  width: 10px;
+  height: 19px;
+}
+
+@mixin sprite-icon-gift {
+  @include svg-common;
+  background-position: 29.197080291970803% 100%;
+  width: 55.5px;
+  height: 60px;
+}
+
+@mixin sprite-icon-insta-mobile {
+  @include svg-common;
+  background-position: 47.142857142857146% 72.67080745341615%;
+  width: 16px;
+  height: 16px;
+}
+
+@mixin sprite-icon-mail {
+  @include svg-common;
+  background-position: 63.5655737704918% 41.21951219512194%;
+  width: 17px;
+  height: 13px;
+}
+
+@mixin sprite-icon-mobile-menu {
+  @include svg-common;
+  background-position: 69.19831223628692% 23.647798742138363%;
+  width: 24px;
+  height: 18px;
+}
+
+@mixin sprite-icon-phone {
+  @include svg-common;
+  background-position: 53.02904564315353% 59.617834394904456%;
+  width: 20px;
+  height: 20px;
+}
+
+@mixin sprite-icon-plus-mobile {
+  @include svg-common;
+  background-position: 58.00865800865801% 25.578231292517007%;
+  width: 30px;
+  height: 30px;
+}
+
+@mixin sprite-icon-right-arrow-long {
+  @include svg-common;
+  background-position: 80.4054054054054% 58.433734939759034%;
+  width: 24.2px;
+  height: 11px;
+}
+
+@mixin sprite-icon-tick {
+  @include svg-common;
+  background-position: 55.85660691954981% 41.85758513931888%;
+  width: 21.1px;
+  height: 15.5px;
+}
+
+@mixin sprite-icon-vk-mobile {
+  @include svg-common;
+  background-position: 68.61924686192468% 33.696969696969695%;
+  width: 22px;
+  height: 12px;
+}
+
+@mixin sprite-logo-footer {
+  @include svg-common;
+  background-position: 0 60.9375%;
+  width: 127.8px;
+  height: 23.4px;
+}
+
+@mixin sprite-logo-mobile {
+  @include svg-common;
+  background-position: 0 0;
+  width: 190.4px;
+  height: 37.6px;
+}
+

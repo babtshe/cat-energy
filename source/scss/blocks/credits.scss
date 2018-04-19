@@ -11,12 +11,29 @@
   font-size: 16px;
   line-height: 16px;
   font-weight: normal;
+
+  &:active {
+    color: rgba(68, 68, 68, 0.3);
+  }
 }
 
 .credits__text {
   margin: 10px 0;
+
+  &:active {
+    color: rgba(68, 68, 68, 0.3);
+  }
 }
 
 .credits__logo {
   fill: #666666;
+
+  &:hover {
+    fill: $theme-color-default;
+  }
+
+  &:active {
+    fill: $theme-color-default;
+    opacity: 0.3;
+  }
 }

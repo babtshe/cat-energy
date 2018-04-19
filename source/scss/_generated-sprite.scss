@@ -46,7 +46,7 @@
 
 @mixin sprite-icon-insta-mobile {
   @include svg-common;
-  background-position: 47.142857142857146% 72.67080745341615%;
+  background-position: 59.38775510204081% 72.67080745341615%;
   width: 16px;
   height: 16px;
 }
@@ -70,6 +70,13 @@
   background-position: 53.02904564315353% 59.617834394904456%;
   width: 20px;
   height: 20px;
+}
+
+@mixin sprite-icon-plus-gray-mobile {
+  @include svg-common;
+  background-position: 50% 79.59183673469387%;
+  width: 30px;
+  height: 30px;
 }
 
 @mixin sprite-icon-plus-mobile {

@@ -2,9 +2,17 @@
 {{#*inline "main-block"}}
 <section class="hero">
   <div class="hero__inner">
-    <h1 class="hero__title">Функциональное питание для котов</h1>
+    <h1 class="hero__title">Функциональное питание&nbsp;для&nbsp;котов</h1>
     <p class="hero__slogan">Занялся собой? Займись котом!</p>
-    <img src="http://placehold.it/280x270" alt="Функциональное питание для котов" class="hero__image">
+  </div>
+  <div class="hero__background"></div>
+  <div class="hero__image">
+    <picture class="hero__picture">
+      {{!--
+      <source media="(min-width: 1200px)" srcset="./img/logo-desktop.svg"> --}} {{!--
+      <source media="(min-width: 768px)" srcset="./img/logo-tablet.svg"> --}}
+      <img src="./img/index-can-mobile@1x.png" alt="Функциональное питание для котов" width="280" height="271">
+    </picture>
   </div>
 </section>
 <section class="program-choice">
@@ -30,16 +38,16 @@
 <section class="advantages">
   <h2 class="advantages__title">Как это работает</h2>
   <ul class="advantages__list">
-    <li class="advantages__item">
+    <li class="advantages__item advantages__item--leaf">
       <p class="advantages__description">Функциональное питание содержит только полезные питательные вещества.</p>
     </li>
-    <li class="advantages__item">
+    <li class="advantages__item advantages__item--powder">
       <p class="advantages__description">Выпускается в виде порошка, который нужно лишь залить кипятком и готово.</p>
     </li>
-    <li class="advantages__item">
+    <li class="advantages__item advantages__item--dining">
       <p class="advantages__description">Замените один-два приема обычной еды на наше функциональное питание.</p>
     </li>
-    <li class="advantages__item">
+    <li class="advantages__item advantages__item--clock">
       <p class="advantages__description">Уже через месяц наслаждайтесь изменениями к лучшему вашего питомца!</p>
     </li>
   </ul>
@@ -47,23 +55,37 @@
 <section class="example">
   <h2 class="example__title">Живой пример</h2>
   <p class="example__description">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.</p>
-  <table class="example__highlight-table">
-    <tr class="example__highlight-row">
-      <td class="example__highlight">5 кг</td>
-      <td class="example__highlight">60 дней</td>
-    </tr>
-    <tr class="example__property-row">
-      <th class="example__property">снижение веса</th>
-      <th class="example__property">затрачено времени</th>
-    </tr>
-  </table>
+  <ul class="example__highlight-list">
+    <li class="example__highlight-value">5 кг
+      <div class="example__highlight-property">снижение веса</div>
+    </li>
+    <li class="example__highlight-value">60 дней
+      <div class="example__highlight-property">затрачено времени</div>
+    </li>
+  </ul>
   <p class="example__costs">Затраты на питание: 15 000 руб.</p>
   <div class="example__slider slider">
-    <img src="http://placehold.it/311x232" alt="кот до" class="example__image--before">
-    <img src="http://placehold.it/311x232" alt="кот после" class="example__image--after">
-    <button type="button" class="slider__button slider__button--before">Было</button>
-    <div class="slider__range">полосочка</div>
-    <button type="button" class="slider__button slider__button--after">Стало</button>
+    <div class="slider__image-wrapper">
+      <picture class="slider__image slider__image--before slider__image--current">
+        {{!--
+        <source media="(min-width: 1200px)" srcset="./img/logo-desktop.svg"> --}} {{!--
+        <source media="(min-width: 768px)" srcset="./img/logo-tablet.svg"> --}}
+        <img src="./img/before-mobile@1x.png" alt="кот до" width="320" height="240">
+      </picture>
+      <picture class="slider__image slider__image--after">
+        {{!--
+        <source media="(min-width: 1200px)" srcset="./img/logo-desktop.svg"> --}} {{!--
+        <source media="(min-width: 768px)" srcset="./img/logo-tablet.svg"> --}}
+        <img src="./img/after-mobile@1x.png" alt="кот после" width="320" height="240">
+      </picture>
+    </div>
+    <div class="slider__controls">
+      <button type="button" class="slider__button slider__button--before">Было</button>
+      <div class="slider__range">
+        <div class="slider__handle"></div>
+      </div>
+      <button type="button" class="slider__button slider__button--after">Стало</button>
+    </div>
   </div>
 </section>
 {{/inline}}

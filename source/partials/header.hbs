@@ -3,8 +3,11 @@
   <nav class="page__navigation burger-menu">
     <div class="logo logo--header burger-menu__logo">
       <a{{#unless index-page}} href="index.html"{{/unless}} class="logo__link">
-        <img class="logo__icon" src="http://placehold.it/33x38" alt="Cat Energy logo" width="33" height="38">
-        <img class="logo__name" src="http://placehold.it/101x18" alt="Cat Energy" width="101" height="18">
+        <picture class="logo__icon">
+           {{!-- <source media="(min-width: 1200px)" srcset="./img/logo-desktop.svg"> --}}
+           {{!-- <source media="(min-width: 768px)" srcset="./img/logo-tablet.svg"> --}}
+           <img class="logo__img" src="./img/logo-mobile.svg" alt="Cat Energy logo" width="192" height="38">
+        </picture>
       </a>
     </div>
     <button class="burger-menu__toggle-btn burger-menu__toggle-btn--nojs">

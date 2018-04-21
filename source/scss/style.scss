@@ -1,0 +1,22 @@
+@import "./normalize.scss";
+@import "./variables.scss";
+@import "./_generated-sprite.scss";//auto-generated mixins for icons-sprite. Руками не трогать! Шаблон в partials/sprite.hbs
+@import "./mixins.scss";
+@import "./global.scss";
+//blocks
+@import "./blocks/page.scss";
+@import "./blocks/burger-menu.scss";
+@import "./blocks/logo.scss";
+@import "./blocks/hero.scss";
+@import "./blocks/program-choice.scss";
+@import "./blocks/program.scss";
+@import "./blocks/advantages.scss";
+@import "./blocks/example.scss";
+@import "./blocks/slider.scss";
+@import "./blocks/contacts.scss";
+@import "./blocks/social-list.scss";
+@import "./blocks/credits.scss";
+@import "./blocks/catalog.scss";
+@import "./blocks/product.scss";
+@import "./blocks/accessories.scss";
+@import "./blocks/form-food.scss";

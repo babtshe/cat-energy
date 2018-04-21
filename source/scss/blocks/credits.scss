@@ -1,0 +1,39 @@
+.credits {
+  display: flex;
+  padding: 20px;
+  max-width: $media-mobile;
+  justify-content: space-between;
+}
+
+.credits__link {
+  font-family: $font-stack-default;
+  color: $font-color-default;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: normal;
+
+  &:active {
+    color: rgba(68, 68, 68, 0.3);
+  }
+}
+
+.credits__text {
+  margin: 10px 0;
+
+  &:active {
+    color: rgba(68, 68, 68, 0.3);
+  }
+}
+
+.credits__logo {
+  fill: #666666;
+
+  &:hover {
+    fill: $theme-color-default;
+  }
+
+  &:active {
+    fill: $theme-color-default;
+    opacity: 0.3;
+  }
+}

@@ -1,0 +1,67 @@
+.accessories__title {
+  position: relative;
+  font-family: $font-stack;
+  font-size: 24px;
+  line-height: 24px;
+  color: #111111;
+  margin: 8px 0 34px 0;
+  font-weight: normal;
+  padding-left: 19px;
+
+  &::after {//FIXME: какая-то плохо, зеленая херня должна тянуться. Переделать!
+    position: absolute;
+    top: 60%;
+    right: 0;
+    display: block;
+    content: "";
+    height: 3px;
+    width: 53px;
+    overflow: hidden;
+    background-color: $theme-color-default;
+  }
+}
+
+.accessories__list {
+  list-style: none;
+  margin: 0;
+  padding: 0 20px;
+}
+
+.accessories__item {
+  border-top: 1px solid #cdcdcd;
+  padding: 0 0 5px;
+}
+
+.accessories__order-all {
+  border-top: 1px solid #cdcdcd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $theme-color-default;
+  background-image: url("../img/gift-photo-mobile@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: 0 39px;
+  background-clip: content-box;
+  min-height: 364px;
+  padding: 39px 0 35px;
+  margin: 0 20px;
+}
+
+.accessories__order-slogan {
+  display: block;
+  margin: 0;
+  padding: 40px 55px;
+  text-align: center;
+  font-family: $font-stack-default;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 20px;
+
+  &::before {
+    content: "";
+    display: block;
+    margin: 23px auto 64px auto;
+
+    @include sprite-icon-gift;
+  }
+}

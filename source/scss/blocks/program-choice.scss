@@ -1,0 +1,16 @@
+.program-choice {
+  padding: 0 20px;
+}
+
+.program-choice__btn {
+  @include button-default(14px,18px);
+  display: block;
+  padding: 11px 0;
+}
+
+.program-choice__list {
+  list-style: none;
+  margin: 22px 0 0 0;
+  padding: 0;
+}
+

@@ -1,0 +1,51 @@
+.hero {
+  position: relative;
+  margin-bottom: -1px;
+}
+
+.hero__inner {
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__title {
+  margin: 0;
+  padding: 27px 20px 25px 20px;
+  font-family: $font-stack;
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: normal;
+}
+
+.hero__slogan {
+  margin: 0;
+  font-family: $font-stack;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 320px;
+  min-height: 305px;
+  z-index: -1;
+  background-color: $theme-color-default;
+  background-image: url("../img/index-background-mobile@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hero__image {
+  padding-top: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

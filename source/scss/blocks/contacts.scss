@@ -1,0 +1,29 @@
+.contacts__wrapper {
+  padding: 29px 20px 25px 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.contacts__slogan {
+  font-family: $font-stack;
+  color: #111111;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin: 0;
+}
+
+.contacts__address {
+  margin-left: 18px;
+  font-style: normal;
+  line-height: 20px;
+}
+
+.contacts__map {
+  background-image: url("../img/bg-map-mobile@1x.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  min-height: 400px;
+}

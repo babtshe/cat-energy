@@ -1,6 +1,22 @@
 .hero {
   position: relative;
-  margin-bottom: -1px;
+  margin-bottom: -2px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 320px;
+    min-height: 305px;
+    z-index: -1;
+    background-color: $theme-color-default;
+    background-image: url("../img/index-background-mobile@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 .hero__inner {
@@ -8,15 +24,19 @@
   color: #ffffff;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 27px 20px 0 20px;
 }
 
 .hero__title {
   margin: 0;
-  padding: 27px 20px 25px 20px;
+  padding: 0 0 25px 0;
   font-family: $font-stack;
   font-size: 36px;
   line-height: 36px;
   font-weight: normal;
+  max-width: 280px;
 }
 
 .hero__slogan {
@@ -28,24 +48,74 @@
   text-transform: uppercase;
 }
 
-.hero__background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-width: 320px;
-  min-height: 305px;
-  z-index: -1;
-  background-color: $theme-color-default;
-  background-image: url("../img/index-background-mobile@1x.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
+.hero__btn {
+  @include button-default(14px,18px);
+  display: block;
+  padding: 11px 20px;
+  order: 2;
+  align-self: stretch;
 }
+
 
 .hero__image {
   padding-top: 28px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+.hero__picture {
+  line-height: 0;
+}
+
+@media (min-width: $media-tablet) {
+  .hero {
+    padding: 20px 30px 0;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .hero__inner {
+    text-align: left;
+    color: #111111;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 23px 20px 0 87px;
+  }
+
+  .hero__title {
+    margin: 0;
+    padding: 0 0 40px 0;
+    font-family: $font-stack;
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: normal;
+    max-width: 427px;
+  }
+
+  .hero__slogan {
+    margin: 0;
+    font-family: $font-stack;
+    font-size: 20px;
+    line-height: 20px;
+    align-self: flex-start;
+  }
+
+  .hero__btn {
+    @include button-default(20px, 20px);
+    margin: 48px 0 0 2px;
+    min-width: 245px;
+    order: initial;
+    align-self: flex-start;
+    padding-left: 21px;
+  }
+
+  .hero__image {
+    position: relative;
+    margin-left: -87px;
+    margin-top: -110px;
+    margin-right: -20px;
+    z-index: -1;
+  }
 }
 

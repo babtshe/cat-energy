@@ -89,3 +89,15 @@
 .advantages__description {
   padding-top: 2px;
 }
+
+
+@media (min-width: $media-tablet) {
+  .advantages {
+    padding: 17px 30px 20px 30px;
+  }
+
+  .advantages__title {
+    font-size: 60px;
+    line-height: 60px;
+  }
+}

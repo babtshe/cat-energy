@@ -1,6 +1,6 @@
 .page {
-  min-width: $media-mobile;
-  margin: 0;
+  width: $media-mobile;
+  margin: 0 auto;
   font-family: $font-stack-default;
   font-size: 14px;
   line-height: 18px;
@@ -10,8 +10,16 @@
 
 @media (min-width: $media-tablet) {
   .page {
+    width: $media-tablet;
     font-size: 16px;
     line-height: 24px;
+  }
+
+  .page__footer-row {
+    display: flex;
+    padding: 58px 30px;
+    justify-content: flex-start;
+    align-items: center;
   }
 }
 

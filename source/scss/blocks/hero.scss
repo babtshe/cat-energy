@@ -105,7 +105,7 @@
     @include button-default(20px, 20px);
     margin: 48px 0 0 2px;
     min-width: 245px;
-    order: initial;
+    order: 0;
     align-self: flex-start;
     padding-left: 21px;
   }
@@ -113,9 +113,12 @@
   .hero__image {
     position: relative;
     margin-left: -87px;
-    margin-top: -110px;
+    margin-top: -83px;
     margin-right: -20px;
     z-index: -1;
+    width: 709px;
+    height: 609px;
+    padding: 0;
   }
 }
 

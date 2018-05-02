@@ -14,6 +14,7 @@ var gulp = require('gulp'),
   wait = require('gulp-wait'),
   webp = require('imagemin-webp'),
   svgsprite = require('gulp-svg-sprite'),
+  concat = require('gulp-concat'),
   reload = browsersync.reload;
 
 var path = {
@@ -32,7 +33,7 @@ var path = {
       svg: 'source/img/**/*.svg',
       raster: 'source/img/**/*.{png,jpg}'
     },
-    js: 'source/js/script.js',
+    js: 'source/js/*.js',
     style: 'source/scss/style.scss'
   },
   watch: {
@@ -132,6 +133,7 @@ gulp.task('js:build', function (callback) {
     gulp.src(path.source.js),
     sourcemaps.init(),
     jsmin(),
+    concat('script.js'),
     sourcemaps.write(),
     gulp.dest(path.build.js),
     reload({

@@ -122,3 +122,46 @@
   }
 }
 
+@media (min-width: $media-desktop) {
+  .hero {
+    position: static;
+    max-width: $media-desktop;
+    padding: 20px 40px 0;
+    margin: 0 auto;
+
+    &::before {
+      left: auto;
+      right: 0;
+      display: block;
+      width: 50%;
+      min-height: 696px;
+      background-position: right 0 center;
+      background-size: contain;
+    }
+  }
+
+  .hero__inner {
+    flex-wrap: wrap;
+    height: 600px;
+    padding: 23px 20px 0 77px;
+  }
+
+  .hero__image {
+    width: 552px;
+    height: 499px;
+  }
+
+  .hero__title {
+    margin-top: 50px;
+    margin-left: 3px;
+  }
+
+  .hero__slogan {
+    margin-left: 3px;
+  }
+
+  .hero__btn {
+    margin: 54px 0 0 3px;
+  }
+}
+

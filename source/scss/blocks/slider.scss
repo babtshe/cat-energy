@@ -130,3 +130,9 @@
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15), 0 0 0 1px #cdcdcd;
   }
 }
+
+@media (min-width: $media-desktop) {
+  .slider__image {
+    width: 610px;
+  }
+}

@@ -23,4 +23,16 @@
   }
 }
 
+@media (min-width: $media-desktop) {
+  .page {
+    width: auto;
+  }
+
+  .page__footer-row {
+    max-width: $media-desktop;
+    margin: 0 auto;
+    padding: 58px 40px;
+  }
+}
+
 

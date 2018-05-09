@@ -67,3 +67,26 @@
     min-height: 400px;
   }
 }
+
+@media (min-width: $media-desktop) {
+  .contacts {
+    margin-top: 0;
+  }
+
+  .contacts__wrapper {
+    position: relative;
+    top: 95px;
+    left: 3%;
+    width: 570px;
+    min-height: 201px;
+    background-color: #ffffff;
+    padding-left: 40px;
+  }
+
+  .contacts__map {
+    margin-top: -201px;
+    width: 100%;
+    background-image: url("http://placehold.it/1300x400");
+    background-size: cover;
+  }
+}

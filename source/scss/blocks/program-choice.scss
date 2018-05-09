@@ -28,3 +28,25 @@
     margin-top: 0;
   }
 }
+
+@media (min-width: $media-desktop) {
+  .program-choice {
+    padding: 0 40px;
+    max-width: $media-desktop;
+    margin: 0 auto;
+  }
+
+  .program-choice__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .program-choice__item {
+    width: 570px;
+    margin-top: 27px;
+  }
+
+  .program-choice__item:first-child {
+    margin-top: 27px;
+  }
+}

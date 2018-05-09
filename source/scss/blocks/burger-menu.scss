@@ -91,3 +91,28 @@
     padding-left: 35px;
   }
 }
+
+@media (min-width: $media-desktop) {
+  .burger-menu {
+    padding-top: 54px;
+    padding-left: 40px;
+    padding-right: 40px;
+    max-width: $media-desktop;
+    margin: 0 auto;
+  }
+
+  .burger-menu__list {
+    font-size: 20px;
+    line-height: 25px;
+    padding-right: 0;
+    margin-top: -2px;
+  }
+
+  .burger-menu__link {
+    color: #ffffff;
+
+    &:not([href]) {
+      border-bottom: 2px solid #ffffff;
+    }
+  }
+}

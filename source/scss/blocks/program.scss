@@ -83,6 +83,7 @@
 @media (min-width: $media-tablet) {
   .program {
     padding: 75px 50px 55px 50px;
+    min-height: 372px;
   }
 
   .program__header {
@@ -138,5 +139,42 @@
     font-size: 20px;
     padding-right: 48px;
     margin: 16px 0 0 2px;
+  }
+}
+
+@media (min-width: $media-desktop) {
+  .program__header {
+    padding: 1px 0 15px 164px;
+
+    &::before {
+      width: 100px;
+      height: 100px;
+      right: auto;
+      left: 2px;
+      top: -28px;
+    }
+
+    &--slim::after {
+      left: 16px;
+      right: auto;
+      top: -34px;
+      transform: scale(0.5);
+    }
+
+    &--pro::after {
+      left: -16px;
+      right: auto;
+      top: -6px;
+      transform: scale(0.5);
+    }
+  }
+
+  .program__description {
+    max-width: 470px;
+    padding: 60px 0 0 2px;
+  }
+
+  .program__link {
+    margin: 11px 0 0 2px;
   }
 }

@@ -50,6 +50,10 @@
 }
 
 @media (min-width: $media-desktop) {
+  .logo {
+    padding: 0 0 15px 0;
+  }
+
   .logo__icon--desktop {
     display: block;
   }

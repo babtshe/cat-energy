@@ -93,6 +93,9 @@
   border: 1px solid #e6e6e6;
   color: #444444;
   box-shadow: none;
+  width: 280px;
+  margin: 0 auto;
+  display: block;
 
   &::placeholder {
     text-transform: uppercase;
@@ -153,4 +156,40 @@
   min-height: 40px;
 }
 
+@media (min-width: $media-tablet) {
+  .form-food__title {
+    padding: 0 30px;
+    font-size: 60px;
+  }
 
+  .form-food__slogan {
+    font-size: 20px;
+    line-height: 30px;
+    width: 385px;
+    padding-left: 40px;
+  }
+
+  .form-food__radio-wrapper {
+    outline: 1px solid #e6e6e6;
+  }
+
+  .form-food__input-textarea {
+    width: 630px;
+  }
+
+  .form-food__checkbox-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .form-food__field--checkbox {
+    flex: 1 0 50%;
+  }
+
+  .form-food__required-text {
+    display: inline-block;
+    vertical-align: baseline;
+    margin-left: 60px;
+  }
+}

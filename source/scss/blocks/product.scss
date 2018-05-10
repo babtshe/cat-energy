@@ -182,3 +182,35 @@
     width: 100%;
   }
 }
+
+@media (min-width: $media-desktop) {
+  .product__properties-list {
+    width: 169px;
+  }
+
+  .product__order-btn {
+    width: 169px;
+    flex-grow: 0;
+  }
+
+  .product__description--accessory {
+    justify-content: flex-start;
+    width: 610px;
+  }
+
+  .product__properties-list--accessories {
+    justify-content: space-between;
+    width: 287px;
+  }
+
+  .product--accessory {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    min-height: 73px;
+  }
+
+  .product__property-name--accessories {
+    text-align: left;
+  }
+}

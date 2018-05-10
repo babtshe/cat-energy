@@ -128,3 +128,13 @@
     text-align: center;
   }
 }
+
+@media (min-width: $media-desktop) {
+  .catalog {
+    width: $media-desktop;
+  }
+
+  .catalog__item {
+    flex: 0 0 245px;
+  }
+}

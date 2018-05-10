@@ -123,3 +123,27 @@
     }
   }
 }
+
+@media (min-width: $media-desktop) {
+  .accessories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .accessories__wrapper {
+    padding: 0 30px;
+    flex-basis: $media-desktop;
+    margin: 0 auto;
+  }
+
+  .accessories__list {
+    flex-basis: 895px;
+  }
+
+  .accessories__order-all {
+    flex-basis: 245px;
+    min-height: 289px;
+    padding-top: 0;
+  }
+}

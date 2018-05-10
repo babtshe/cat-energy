@@ -13,13 +13,13 @@
     </button>
     <ul class="burger-menu__list burger-menu__list--nojs">
       <li class="burger-menu__item">
-        <a class="burger-menu__link"{{#unless index-page}} href="index.html"{{/unless}}>Главная</a>
+        <a class="burger-menu__link{{#if index-page}} burger-menu__link--index{{/if}}"{{#unless index-page}} href="index.html"{{/unless}}>Главная</a>
       </li>
       <li class="burger-menu__item">
-        <a class="burger-menu__link"{{#unless catalog-page}} href="catalog.html"{{/unless}}>Каталог продукции</a>
+        <a class="burger-menu__link{{#if index-page}} burger-menu__link--index{{/if}}"{{#unless catalog-page}} href="catalog.html"{{/unless}}>Каталог продукции</a>
       </li>
       <li class="burger-menu__item">
-        <a class="burger-menu__link"{{#unless program-page}} href="program.html"{{/unless}}>Подбор программы</a>
+        <a class="burger-menu__link{{#if index-page}} burger-menu__link--index{{/if}}"{{#unless program-page}} href="program.html"{{/unless}}>Подбор программы</a>
       </li>
     </ul>
   </nav>

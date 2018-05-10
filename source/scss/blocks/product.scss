@@ -26,6 +26,7 @@
   text-transform: uppercase;
   color: #111111;
   margin: 21px 0 12px 0;
+  width: 100px;
 
   &--accessories {
     margin: 12px 0 10px 0;
@@ -72,4 +73,112 @@
 
   @include button-default(16px);
   padding: 10px 0;
+}
+
+@media (min-width: $media-tablet) {
+  .product {
+    max-width: 100%;
+    min-height: 571px;
+    padding-top: 140px;
+    background-color: #f2f2f2;
+    background-clip: content-box;
+    margin-bottom: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .product__image-wrapper {
+    width: 195px;
+    height: 208px;
+    background: yellow; //here will be image
+    margin-top: -100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .product__description {
+    flex: 0 0;
+    width: 249px;
+    min-height: 226px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product__name {
+    font-size: 20px;
+    width: 135px;
+    text-align: center;
+    margin: 55px 0 12px 0;
+  }
+
+  .product__properties-list {
+    width: 249px;
+    margin-top: 7px;
+  }
+
+  .product__property-name {
+    font-size: 16px;
+    border-bottom: 1px solid #cdcdcd;
+    padding: 8px 0 7px;
+  }
+
+  .product__property-value {
+    font-size: 16px;
+    border-bottom: 1px solid #cdcdcd;
+    padding: 8px 0 7px;
+  }
+
+  .product__order-btn {
+    flex: 0 0;
+    width: 249px;
+    margin-top: 17px;
+    min-height: 40px;
+    order: 2;
+  }
+
+  .product--accessory {
+    min-height: 138px;
+    padding: 27px 37px;
+    background-color: transparent;
+    outline: 1px solid #e6e6e6;
+  }
+
+  .product__description--accessory {
+    min-height: 27px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .product__name--accessories {
+    margin: -1px 0 0 2px;
+    width: auto;
+  }
+
+  .product__properties-list--accessories {
+    margin: 0;
+    width: 287px;
+    justify-content: flex-end;
+  }
+
+  .product__property-name--accessories {
+    border-bottom: none;
+    text-align: right;
+    padding: 6px 0 7px;
+  }
+
+  .product__property-value--accessories {
+    border-bottom: none;
+    flex-basis: 95px;
+    padding: 6px 0 7px;
+  }
+
+  .product__order-btn--accessories {
+    width: 100%;
+  }
 }

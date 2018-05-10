@@ -184,12 +184,39 @@
   }
 
   .form-food__field--checkbox {
-    flex: 1 0 50%;
+    flex: 1 0 284px;
   }
 
   .form-food__required-text {
     display: inline-block;
     vertical-align: baseline;
     margin-left: 60px;
+  }
+}
+
+@media (min-width: $media-desktop) {
+  .form-food__fieldset {
+    display: flex;
+  }
+
+  .form-food__text-wrapper {
+    width: 570px;
+  }
+
+  .form-food__section-header {
+    font-size: 36px;
+    max-width: 570px;
+  }
+
+  .form-food__input-textarea {
+    width: 1220px;
+  }
+
+  .form-food__field--checkbox {
+    flex: 1 0 245px;
+  }
+
+  .form-food__submit {
+    width: 570px;
   }
 }

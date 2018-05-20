@@ -32,3 +32,9 @@
   }
 }
 
+@media (min-width: $media-tablet) {
+  .social-list {
+    border: none;
+    flex-grow: 1;
+  }
+}

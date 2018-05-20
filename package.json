@@ -11,6 +11,7 @@
     "gulp-autoprefixer": "^5.0.0",
     "gulp-clean-css": "^3.9.3",
     "gulp-compile-handlebars": "^0.6.1",
+    "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^4.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^4.0.1",
@@ -40,7 +41,7 @@
     "*.json",
     "*.js",
     "source/*.html",
-    "source/js/**/*.js",
+    "source/js/**/script.js",
     "source/img/**/*.svg",
     "source/sass/**/*.{sass,scss}"
   ],

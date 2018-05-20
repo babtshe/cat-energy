@@ -1,11 +1,39 @@
 .page {
-  min-width: $media-mobile;
-  margin: 0;
+  width: $media-mobile;
+  margin: 0 auto;
   font-family: $font-stack-default;
   font-size: 14px;
   line-height: 18px;
   color: $font-color-default;
   font-weight: normal;
+}
+
+@media (min-width: $media-tablet) {
+  .page {
+    width: $media-tablet;
+    overflow-x: hidden;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .page__footer-row {
+    display: flex;
+    padding: 58px 30px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+@media (min-width: $media-desktop) {
+  .page {
+    width: $media-desktop;
+  }
+
+  .page__footer-row {
+    max-width: $media-desktop;
+    margin: 0 auto;
+    padding: 58px 40px;
+  }
 }
 
 

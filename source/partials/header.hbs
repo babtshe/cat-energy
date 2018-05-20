@@ -3,11 +3,9 @@
   <nav class="page__navigation burger-menu">
     <div class="logo logo--header burger-menu__logo">
       <a{{#unless index-page}} href="index.html"{{/unless}} class="logo__link">
-        <picture class="logo__icon">
-           {{!-- <source media="(min-width: 1200px)" srcset="./img/logo-desktop.svg"> --}}
-           {{!-- <source media="(min-width: 768px)" srcset="./img/logo-tablet.svg"> --}}
-           <img class="logo__img" src="./img/logo-mobile.svg" alt="Cat Energy logo" width="192" height="38">
-        </picture>
+        {{> svginline logo-mobile="true" class="logo__icon logo__icon--mobile" alt="Cat Energy logo" w="192" h="38"}}
+        {{> svginline logo-tablet="true" class="logo__icon logo__icon--tablet" alt="Cat Energy logo" w="173" h="58"}}
+        {{> svginline logo-desktop="true" class="logo__icon logo__icon--desktop" alt="Cat Energy logo" w="202" h="59"}}
       </a>
     </div>
     <button class="burger-menu__toggle-btn burger-menu__toggle-btn--nojs">
@@ -15,13 +13,13 @@
     </button>
     <ul class="burger-menu__list burger-menu__list--nojs">
       <li class="burger-menu__item">
-        <a class="burger-menu__link"{{#unless index-page}} href="index.html"{{/unless}}>Главная</a>
+        <a class="burger-menu__link{{#if index-page}} burger-menu__link--index{{/if}}"{{#unless index-page}} href="index.html"{{/unless}}>Главная</a>
       </li>
       <li class="burger-menu__item">
-        <a class="burger-menu__link"{{#unless catalog-page}} href="catalog.html"{{/unless}}>Каталог продукции</a>
+        <a class="burger-menu__link{{#if index-page}} burger-menu__link--index{{/if}}"{{#unless catalog-page}} href="catalog.html"{{/unless}}>Каталог продукции</a>
       </li>
       <li class="burger-menu__item">
-        <a class="burger-menu__link"{{#unless program-page}} href="program.html"{{/unless}}>Подбор программы</a>
+        <a class="burger-menu__link{{#if index-page}} burger-menu__link--index{{/if}}"{{#unless program-page}} href="program.html"{{/unless}}>Подбор программы</a>
       </li>
     </ul>
   </nav>

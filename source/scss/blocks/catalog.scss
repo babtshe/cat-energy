@@ -82,3 +82,59 @@
     color: rgba(68, 68, 68, 0.3);
   }
 }
+
+@media (min-width: $media-tablet) {
+  .catalog {
+    width: $media-tablet;
+    margin: 0 auto;
+    padding: 42px 30px 0;
+  }
+
+  .catalog__header {
+    padding: 0;
+    font-size: 60px;
+    line-height: 60px;
+    margin-bottom: 25px;
+  }
+
+  .catalog__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .catalog__item {
+    flex: 0 0 324px;
+    border-top: none;
+    padding: 0;
+  }
+
+  .catalog__more {
+    border: 1px solid #e6e6e6;
+    width: 324px;
+    min-height: 432px;
+    margin-top: 140px;
+  }
+
+  .catalog__more-title {
+    font-size: 16px;
+    width: 141px;
+    text-align: center;
+  }
+
+  .catalog__more-slogan {
+    font-size: 16px;
+    width: 171px;
+    text-align: center;
+  }
+}
+
+@media (min-width: $media-desktop) {
+  .catalog {
+    width: $media-desktop;
+  }
+
+  .catalog__item {
+    flex: 0 0 245px;
+  }
+}

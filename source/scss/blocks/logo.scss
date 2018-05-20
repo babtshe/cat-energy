@@ -2,12 +2,22 @@
   padding: 0 0 15px 20px;
   flex-grow: 0;
   flex-shrink: 0;
+  flex-basis: 170px;
+  margin-bottom: 1px;
 
   &--footer {
     display: flex;
     justify-content: center;
     margin-left: -20px;
     margin-top: 1px;
+  }
+}
+
+.logo__icon {
+  display: none;
+
+  &--footer {
+    display: block;
   }
 }
 
@@ -21,4 +31,30 @@
 //хак для IE
 .logo__link[href] .logo__img:active {
   opacity: 0.6;
+}
+
+@media (max-width: $media-tablet - 1px) {
+  .logo__icon--mobile {
+    display: block;
+  }
+}
+
+@media (min-width: $media-tablet) and (max-width: $media-desktop - 1px) {
+  .logo {
+    padding-left: 30px;
+  }
+
+  .logo__icon--tablet {
+    display: block;
+  }
+}
+
+@media (min-width: $media-desktop) {
+  .logo {
+    padding: 0 0 15px 0;
+  }
+
+  .logo__icon--desktop {
+    display: block;
+  }
 }

@@ -1,7 +1,6 @@
 .program {
   background-color: #f2f2f2;
   padding: 20px 20px 18px 20px;
-  margin-top: 20px;
 }
 
 .program__header {
@@ -40,7 +39,7 @@
     left: 10px;
     top: 2px;
     transform-origin: 0 0;
-    transform: scale(0.5);
+    transform: scale(0.25);
   }
 
   &--pro::after {
@@ -48,7 +47,7 @@
     left: -7px;
     top: 15px;
     transform-origin: 0 0;
-    transform: scale(0.5);
+    transform: scale(0.25);
   }
 }
 
@@ -78,5 +77,104 @@
     display: block;
 
     @include sprite-icon-right-arrow-long;
+  }
+}
+
+@media (min-width: $media-tablet) {
+  .program {
+    padding: 75px 50px 55px 50px;
+    min-height: 372px;
+  }
+
+  .program__header {
+    font-size: 36px;
+    line-height: 37px;
+    padding: 6px 0 15px 3px;
+
+    &::before {
+      width: 200px;
+      height: 200px;
+      right: 12px;
+      left: auto;
+      top: 22px;
+    }
+
+    &--slim::after {
+      @include sprite-icon-cat-slim;
+      left: auto;
+      right: 42px;
+      top: 10px;
+      transform: none;
+    }
+
+    &--pro {
+      padding: 1px 0 15px 3px;
+    }
+
+    &--pro::before {
+      right: 10px;
+      top: 16px;
+    }
+
+    &--pro::after {
+      @include sprite-icon-cat-pro;
+      left: auto;
+      right: -22px;
+      top: 60px;
+      transform: none;
+    }
+  }
+
+  .program__description {
+    max-width: 380px;
+    border: none;
+
+    &--pro {
+      max-width: 340px;
+    }
+  }
+
+  .program__link {
+    line-height: 20px;
+    font-size: 20px;
+    padding-right: 48px;
+    margin: 16px 0 0 2px;
+  }
+}
+
+@media (min-width: $media-desktop) {
+  .program__header {
+    padding: 1px 0 15px 164px;
+
+    &::before {
+      width: 100px;
+      height: 100px;
+      right: auto;
+      left: 2px;
+      top: -28px;
+    }
+
+    &--slim::after {
+      left: 16px;
+      right: auto;
+      top: -34px;
+      transform: scale(0.5);
+    }
+
+    &--pro::after {
+      left: -16px;
+      right: auto;
+      top: -6px;
+      transform: scale(0.5);
+    }
+  }
+
+  .program__description {
+    max-width: 470px;
+    padding: 60px 0 0 2px;
+  }
+
+  .program__link {
+    margin: 11px 0 0 2px;
   }
 }

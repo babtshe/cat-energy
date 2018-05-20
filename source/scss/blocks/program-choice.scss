@@ -1,16 +1,52 @@
 .program-choice {
+  margin-top: 22px;
   padding: 0 20px;
 }
 
-.program-choice__btn {
-  @include button-default(14px,18px);
-  display: block;
-  padding: 11px 0;
-}
 
 .program-choice__list {
   list-style: none;
-  margin: 22px 0 0 0;
+  margin: 0;
   padding: 0;
 }
 
+.program-choice__item {
+  margin-top: 22px;
+}
+
+@media (min-width: $media-tablet) {
+  .program-choice {
+    margin-top: 0;
+    padding: 0 30px;
+  }
+
+  .program-choice__item {
+    margin-top: 30px;
+  }
+
+  .program-choice__item:first-child {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: $media-desktop) {
+  .program-choice {
+    padding: 0 40px;
+    max-width: $media-desktop;
+    margin: 0 auto;
+  }
+
+  .program-choice__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .program-choice__item {
+    width: 570px;
+    margin-top: 27px;
+  }
+
+  .program-choice__item:first-child {
+    margin-top: 27px;
+  }
+}

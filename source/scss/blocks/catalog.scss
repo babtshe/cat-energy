@@ -114,18 +114,33 @@
     width: 324px;
     min-height: 432px;
     margin-top: 140px;
+    justify-content: flex-end;
+
+    &::before {
+      margin-top: 69px;
+    }
   }
 
   .catalog__more-title {
-    font-size: 16px;
+    font-size: 20px;
+    line-height: 20px;
     width: 141px;
     text-align: center;
+    margin-bottom: 24px;
   }
 
   .catalog__more-slogan {
     font-size: 16px;
+    line-height: 20px;
     width: 171px;
     text-align: center;
+    margin-bottom: 83px;
+  }
+
+  .catalog__all-btn {
+    width: 249px;
+    align-self: center;
+    margin-bottom: 39px;
   }
 }
 

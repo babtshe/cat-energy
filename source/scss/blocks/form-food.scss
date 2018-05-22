@@ -229,7 +229,7 @@
 @media (min-width: $media-tablet) {
   .form-food {
     margin-top: 42px;
-    margin-bottom: 109px;
+    margin-bottom: 73px;
   }
 
   .form-food__title {
@@ -352,6 +352,7 @@
     font-size: 36px;
     line-height: 36px;
     max-width: none;
+    margin-top: 36px;
     margin-bottom: 75px;
     padding: 0 42px 0 39px;
 
@@ -368,6 +369,7 @@
 
   .form-food__submit {
     margin: 13px 0 0 41px;
+    padding: 16px;
     font-size: 20px;
     width: 283px;
     min-height: 40px;

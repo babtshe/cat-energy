@@ -106,11 +106,16 @@
     width: 570px;
     min-height: 201px;
     background-color: #ffffff;
-    padding-left: 40px;
+    padding-left: 77px;
 
     &::before {
       display: none;
     }
+  }
+
+  .contacts__address {
+    text-align: left;
+    margin-right: 13px;
   }
 
   .contacts__map {

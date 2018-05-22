@@ -147,9 +147,18 @@
 @media (min-width: $media-desktop) {
   .catalog {
     width: $media-desktop;
+    padding: 59px 40px 0;
+  }
+
+  .catalog__section {
+    padding-bottom: 3px;
   }
 
   .catalog__item {
     flex: 0 0 245px;
+  }
+
+  .catalog__all-btn {
+    width: 169px;
   }
 }

@@ -6,12 +6,12 @@
   line-height: 18px;
   color: $font-color-default;
   font-weight: normal;
+  overflow-x: hidden;
 }
 
 @media (min-width: $media-tablet) {
   .page {
     width: $media-tablet;
-    overflow-x: hidden;
     font-size: 16px;
     line-height: 24px;
   }

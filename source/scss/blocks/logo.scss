@@ -42,6 +42,10 @@
 @media (min-width: $media-tablet) and (max-width: $media-desktop - 1px) {
   .logo {
     padding-left: 30px;
+
+    &--footer {
+      padding-left: 0;
+    }
   }
 
   .logo__icon--tablet {

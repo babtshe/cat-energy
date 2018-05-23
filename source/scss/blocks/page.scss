@@ -6,19 +6,19 @@
   line-height: 18px;
   color: $font-color-default;
   font-weight: normal;
+  overflow-x: hidden;
 }
 
 @media (min-width: $media-tablet) {
   .page {
     width: $media-tablet;
-    overflow-x: hidden;
     font-size: 16px;
     line-height: 24px;
   }
 
   .page__footer-row {
     display: flex;
-    padding: 58px 30px;
+    padding: 45px 30px;
     justify-content: flex-start;
     align-items: center;
   }
@@ -32,7 +32,7 @@
   .page__footer-row {
     max-width: $media-desktop;
     margin: 0 auto;
-    padding: 58px 40px;
+    padding: 46px 40px;
   }
 }
 

@@ -37,3 +37,14 @@
     opacity: 0.3;
   }
 }
+
+@media (min-width: $media-tablet) {
+  .credits {
+    padding: 0;
+    margin-top: -22px;
+  }
+
+  .credits__text {
+    margin-right: 22px;
+  }
+}

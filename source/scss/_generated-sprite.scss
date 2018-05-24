@@ -4,7 +4,7 @@
 
 @mixin sprite-htmlacademy {
   @include svg-common;
-  background-position: 81.10275689223059% 38.59477124183007%;
+  background-position: 96.14035087719299% 38.59477124183007%;
   width: 60px;
   height: 60px;
 }
@@ -67,7 +67,21 @@
 
 @mixin sprite-icon-mail {
   @include svg-common;
+  background-position: 79.91040723981902% 50.45325779036827%;
+  width: 17px;
+  height: 13px;
+}
+
+@mixin sprite-icon-mail-green {
+  @include svg-common;
   background-position: 72.21809954751133% 50.45325779036827%;
+  width: 17px;
+  height: 13px;
+}
+
+@mixin sprite-icon-mail-red {
+  @include svg-common;
+  background-position: 76.06425339366518% 50.45325779036827%;
   width: 17px;
   height: 13px;
 }
@@ -86,23 +100,37 @@
   height: 20px;
 }
 
+@mixin sprite-icon-phone-green {
+  @include svg-common;
+  background-position: 70.86560364464694% 64.69971098265896%;
+  width: 20px;
+  height: 20px;
+}
+
+@mixin sprite-icon-phone-red {
+  @include svg-common;
+  background-position: 75.42141230068337% 64.69971098265896%;
+  width: 20px;
+  height: 20px;
+}
+
 @mixin sprite-icon-plus {
   @include svg-common;
-  background-position: 96.14035087719299% 38.59477124183007%;
+  background-position: 81.10275689223059% 38.59477124183007%;
   width: 60px;
   height: 60px;
 }
 
 @mixin sprite-icon-plus-gray-mobile {
   @include svg-common;
-  background-position: 62.4941724941725% 57.696726190476184%;
+  background-position: 69.48717948717949% 57.696726190476184%;
   width: 30px;
   height: 30px;
 }
 
 @mixin sprite-icon-plus-mobile {
   @include svg-common;
-  background-position: 69.48717948717949% 57.696726190476184%;
+  background-position: 62.4941724941725% 57.696726190476184%;
   width: 30px;
   height: 30px;
 }

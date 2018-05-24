@@ -89,10 +89,10 @@
   }
 
   .product__image-wrapper {
-    width: 195px;
+    width: 325px;
     height: 208px;
-    background: yellow; //here will be image
-    margin-top: -100px;
+    margin-top: -81px;
+    margin-bottom: -18px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -185,6 +185,11 @@
 }
 
 @media (min-width: $media-desktop) {
+  .product__image-wrapper {
+    width: 245px;
+    height: 206px;
+  }
+
   .product__properties-list {
     width: 169px;
   }

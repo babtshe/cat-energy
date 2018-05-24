@@ -1,5 +1,5 @@
 .contacts__wrapper {
-  margin: 31px 0 0 0;
+  margin: 0;
   padding: 29px 20px 25px 19px;
   display: flex;
   justify-content: flex-start;
@@ -44,6 +44,11 @@
   width: 100vw;
   min-width: $media-mobile;
   overflow-x: hidden;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/bg-map-mobile@2x.png");
+    background-size: 320px auto;
+  }
 }
 
 @media (min-width: $media-mobile) {
@@ -63,6 +68,15 @@
     padding-right: 70px;
     padding-bottom: 57px;
     justify-content: space-between;
+    margin: 31px 0 0 0;
+  }
+
+  .contacts__wrapper--index {
+    background-color: #ffffff;
+
+    &::before {
+      display: none;
+    }
   }
 
   .contacts__slogan {
@@ -86,10 +100,15 @@
   }
 
   .contacts__map {
-    background-image: url("http://placehold.it/767x400");
+    background-image: url("../img/bg-map-tablet@1x.png");
     background-repeat: no-repeat;
     background-position: bottom;
     min-height: 400px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-map-tablet@2x.png");
+      background-size: 767px auto;
+    }
   }
 }
 
@@ -105,8 +124,8 @@
     left: 3%;
     width: 570px;
     min-height: 201px;
-    background-color: #ffffff;
     padding-left: 77px;
+    background-color: #ffffff;
 
     &::before {
       display: none;
@@ -120,7 +139,12 @@
 
   .contacts__map {
     margin-top: -201px;
-    background-image: url("http://placehold.it/1300x400");
+    background-image: url("../img/bg-map-desktop@1x.png");
     background-size: cover;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-map-desktop@2x.png");
+      background-size: 1440px auto;
+    }
   }
 }

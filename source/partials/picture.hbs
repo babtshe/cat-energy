@@ -1,9 +1,0 @@
-{{!-- придумать шаблон для вставки картинок --}}
-
-<picture{{#if pic-class}} class="{{pic-class}}"{{/if}}>
-  <source media="(min-width: 1200px)" srcset="./img/logo-desktop.svg">
-  <source media="(min-width: 768px)" srcset="./img/logo-tablet.svg">
-  {{#unless pic-ext="svg"}}<source srcset="./img/{{pic-src}}{{#if prefix-mobile}}{{prefix-mobile}}{{else}}-mobile{{/if}}.webp" type="image/webp">{{/unless}}
-  <source srcset="./img/{{pic-src}}{{#if prefix-mobile}}{{prefix-mobile}}{{else}}-mobile{{/if}}.{{pic-ext}}" type="image/{{pic-ext}}">
-  <img src="./img/{{pic-src}}{{#if prefix-mobile}}{{prefix-mobile}}{{else}}-mobile{{/if}}.{{pic-ext}}" alt="{{pic-alt}}">
-</picture>

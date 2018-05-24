@@ -82,7 +82,7 @@
 
 @media (min-width: $media-tablet) {
   .program {
-    padding: 75px 50px 55px 50px;
+    padding: 71px 50px 54px 50px;
     min-height: 372px;
   }
 
@@ -108,19 +108,19 @@
     }
 
     &--pro {
-      padding: 1px 0 15px 3px;
+      padding: 4px 0 15px 3px;
     }
 
     &--pro::before {
       right: 10px;
-      top: 16px;
+      top: 20px;
     }
 
     &--pro::after {
       @include sprite-icon-cat-pro;
       left: auto;
       right: -22px;
-      top: 60px;
+      top: 64px;
       transform: none;
     }
   }

@@ -90,7 +90,7 @@ gulp.task('raster-image:build', function () {
 });
 
 gulp.task('webp-image:build', function () {
-  gulp.src('source/img/**/*.png')//генерируем webp
+  gulp.src('source/img/**/*.jpg')//генерируем webp
   .pipe(imagemin([webp()]))
   .pipe(rename({
     extname: '.webp'

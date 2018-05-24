@@ -122,7 +122,7 @@ gulp.task('svg-image:build', function (callback) {
     svgsprite(svgsConfig),
     gulp.dest(path.build.img)
   ], callback)
-  gulp.src(path.source.img.svg)//копируем свг (потом можно логотип в html встроить)
+  gulp.src(path.source.img.svg)//копируем свг
   .pipe(imagemin())
   .pipe(gulp.dest(path.build.img))
 });
@@ -161,7 +161,7 @@ gulp.task('style:build', function (callback) {
 gulp.task('build', [
   'html:build',
   'fonts:build',
-  'image:build',
+  //'image:build',
   'js:build',
   'style:build'
 ]);

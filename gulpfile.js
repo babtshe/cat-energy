@@ -12,7 +12,8 @@ var gulp = require('gulp'),
   handlebars = require('gulp-compile-handlebars'),
   rename = require('gulp-rename'),
   wait = require('gulp-wait'),
-  webp = require('imagemin-webp'),
+  //webp = require('imagemin-webp'),
+  webp = require('gulp-webp'),
   svgsprite = require('gulp-svg-sprite'),
   concat = require('gulp-concat'),
   reload = browsersync.reload;
@@ -90,11 +91,12 @@ gulp.task('raster-image:build', function () {
 });
 
 gulp.task('webp-image:build', function () {
-  gulp.src('source/img/**/*.jpg')//генерируем webp
-  .pipe(imagemin([webp()]))
-  .pipe(rename({
-    extname: '.webp'
-  }))
+  gulp.src(path.source.img.raster)//генерируем webp
+  //.pipe(imagemin([webp()]))
+  .pipe(webp())
+  // .pipe(rename({
+  //   extname: '.webp'
+  // }))
   .pipe(gulp.dest(path.build.img))
 });
 

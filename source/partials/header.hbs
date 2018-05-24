@@ -3,9 +3,11 @@
   <nav class="page__navigation burger-menu">
     <div class="logo logo--header burger-menu__logo">
       <a{{#unless index-page}} href="index.html"{{/unless}} class="logo__link">
-        {{> svginline logo-mobile="true" class="logo__icon logo__icon--mobile" alt="Cat Energy logo" w="192" h="38"}}
-        {{> svginline logo-tablet="true" class="logo__icon logo__icon--tablet" alt="Cat Energy logo" w="173" h="58"}}
-        {{> svginline logo-desktop="true" class="logo__icon logo__icon--desktop" alt="Cat Energy logo" w="202" h="59"}}
+        <picture>
+          <source media="(min-width: 1300px" srcset="./img/logo-desktop.svg">
+          <source media="(min-width: 768px)" srcset="./img/logo-tablet.svg">
+          <img src="./img/logo-mobile.svg" width="192" height="38" alt="Cat Energy">
+        </picture>
       </a>
     </div>
     <button class="burger-menu__toggle-btn burger-menu__toggle-btn--nojs">

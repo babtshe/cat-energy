@@ -12,7 +12,8 @@ var gulp = require('gulp'),
   handlebars = require('gulp-compile-handlebars'),
   rename = require('gulp-rename'),
   wait = require('gulp-wait'),
-  webp = require('imagemin-webp'),
+  //webp = require('imagemin-webp'),
+  webp = require('gulp-webp'),
   svgsprite = require('gulp-svg-sprite'),
   concat = require('gulp-concat'),
   reload = browsersync.reload;
@@ -74,8 +75,7 @@ gulp.task('fonts:build', function () {
     .pipe(gulp.dest(path.build.fonts));
 });
 
-gulp.task('image:build',['raster-image:build','svg-image:build'], function () {
-
+gulp.task('image:build',['raster-image:build', 'webp-image:build', 'svg-image:build'], function () {
     reload({
       stream: true
     });
@@ -88,11 +88,15 @@ gulp.task('raster-image:build', function () {
     interlaced: true
   }))
   .pipe(gulp.dest(path.build.img))
+});
+
+gulp.task('webp-image:build', function () {
   gulp.src(path.source.img.raster)//генерируем webp
-  .pipe(imagemin([webp()]))
-  .pipe(rename({
-    extname: '.webp'
-  }))
+  //.pipe(imagemin([webp()]))
+  .pipe(webp())
+  // .pipe(rename({
+  //   extname: '.webp'
+  // }))
   .pipe(gulp.dest(path.build.img))
 });
 
@@ -122,7 +126,7 @@ gulp.task('svg-image:build', function (callback) {
     svgsprite(svgsConfig),
     gulp.dest(path.build.img)
   ], callback)
-  gulp.src(path.source.img.svg)//копируем свг (потом можно логотип в html встроить)
+  gulp.src(path.source.img.svg)//копируем свг
   .pipe(imagemin())
   .pipe(gulp.dest(path.build.img))
 });

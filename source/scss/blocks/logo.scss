@@ -1,5 +1,5 @@
 .logo {
-  padding: 0 0 15px 20px;
+  padding: 0 0 13px 20px;
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: 170px;
@@ -13,33 +13,25 @@
   }
 }
 
-.logo__icon {
-  display: none;
-
-  &--footer {
-    display: block;
-  }
+.logo--header img {
+  max-width: initial;
+  width: 192px;
+  height: 38px;
 }
 
 .logo__link {
   opacity: 1;
 }
 
-.logo__link[href] .logo__img:hover {
+.logo__link[href]:hover {
   opacity: 0.8;
 }
 //хак для IE
-.logo__link[href] .logo__img:active {
+.logo__link[href]:active {
   opacity: 0.6;
 }
 
-@media (max-width: $media-tablet - 1px) {
-  .logo__icon--mobile {
-    display: block;
-  }
-}
-
-@media (min-width: $media-tablet) and (max-width: $media-desktop - 1px) {
+@media (min-width: $media-tablet) {
   .logo {
     padding-left: 30px;
 
@@ -48,8 +40,9 @@
     }
   }
 
-  .logo__icon--tablet {
-    display: block;
+  .logo--header img {
+    width: 173px;
+    height: 58px;
   }
 }
 
@@ -58,7 +51,8 @@
     padding: 0 0 15px 0;
   }
 
-  .logo__icon--desktop {
-    display: block;
+  .logo--header img {
+    width: 202px;
+    height: 59px;
   }
 }

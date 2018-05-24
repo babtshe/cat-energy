@@ -4,7 +4,7 @@
 
 @mixin sprite-htmlacademy {
   @include svg-common;
-  background-position: 67.19298245614036% 38.59477124183007%;
+  background-position: 81.10275689223059% 38.59477124183007%;
   width: 60px;
   height: 60px;
 }
@@ -25,79 +25,114 @@
 
 @mixin sprite-icon-close {
   @include svg-common;
-  background-position: 99.8639455782313% 16.264367816091955%;
+  background-position: 79.84126984126983% 55.70718390804597%;
   width: 18px;
   height: 18px;
 }
 
+@mixin sprite-icon-fb {
+  @include svg-common;
+  background-position: 98.85921316686196% 11.116038433111603%;
+  width: 13.518px;
+  height: 27.75px;
+}
+
 @mixin sprite-icon-fb-mobile {
   @include svg-common;
-  background-position: 98.08463251670379% 10.835734870317003%;
+  background-position: 98.08463251670379% 18.832853025936597%;
   width: 10px;
   height: 19px;
 }
 
 @mixin sprite-icon-gift {
   @include svg-common;
-  background-position: 81.31350681536556% 38.59477124183007%;
+  background-position: 66.44361833952912% 38.59477124183007%;
   width: 55.5px;
   height: 60px;
 }
 
+@mixin sprite-icon-insta {
+  @include svg-common;
+  background-position: 61.4908256880734% 65.26559766763847%;
+  width: 23px;
+  height: 23px;
+}
+
 @mixin sprite-icon-insta-mobile {
   @include svg-common;
-  background-position: 65.03386004514674% 50.885714285714286%;
+  background-position: 83.54401805869074% 55.38885714285714%;
   width: 16px;
   height: 16px;
 }
 
 @mixin sprite-icon-mail {
   @include svg-common;
-  background-position: 99.63800904977376% 21.133144475920677%;
+  background-position: 72.21809954751133% 50.45325779036827%;
   width: 17px;
   height: 13px;
 }
 
 @mixin sprite-icon-mobile-menu {
   @include svg-common;
-  background-position: 88.183908045977% 42.55747126436781%;
+  background-position: 75.42528735632185% 55.70718390804597%;
   width: 24px;
   height: 18px;
 }
 
 @mixin sprite-icon-phone {
   @include svg-common;
-  background-position: 61.070615034168576% 51.47398843930636%;
+  background-position: 66.30979498861049% 64.69971098265896%;
   width: 20px;
   height: 20px;
 }
 
+@mixin sprite-icon-plus {
+  @include svg-common;
+  background-position: 96.14035087719299% 38.59477124183007%;
+  width: 60px;
+  height: 60px;
+}
+
 @mixin sprite-icon-plus-gray-mobile {
   @include svg-common;
-  background-position: 89.41724941724942% 35.148809523809526%;
+  background-position: 62.4941724941725% 57.696726190476184%;
   width: 30px;
   height: 30px;
 }
 
 @mixin sprite-icon-plus-mobile {
   @include svg-common;
-  background-position: 96.41025641025641% 35.148809523809526%;
+  background-position: 69.48717948717949% 57.696726190476184%;
   width: 30px;
   height: 30px;
 }
 
 @mixin sprite-icon-right-arrow-long {
   @include svg-common;
-  background-position: 91.05335786568537% 26.676056338028168%;
+  background-position: 98.4130634774609% 26.676056338028168%;
   width: 24.2px;
+  height: 11px;
+}
+
+@mixin sprite-icon-right-arrow-verylong {
+  @include svg-common;
+  background-position: 92.71662763466043% 26.676056338028168%;
+  width: 32px;
   height: 11px;
 }
 
 @mixin sprite-icon-tick {
   @include svg-common;
-  background-position: 93.08061201187486% 42.25392296718973%;
+  background-position: 68.07581639643756% 50.813124108416545%;
   width: 21.1px;
   height: 15.5px;
+}
+
+@mixin sprite-icon-vk {
+  @include svg-common;
+  background-position: 62.494755195852655% 50.85099032375036%;
+  width: 30.004px;
+  height: 15.761px;
 }
 
 @mixin sprite-icon-vk-mobile {

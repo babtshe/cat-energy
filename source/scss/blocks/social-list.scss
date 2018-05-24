@@ -30,11 +30,32 @@
     fill: $theme-color-default;
     opacity: 0.3;
   }
+
+  &--default {
+    display: none;
+  }
 }
 
 @media (min-width: $media-tablet) {
   .social-list {
     border: none;
     flex-grow: 1;
+    padding: 0 0 38px 0;
+    margin: 9px 20px 0;
+  }
+
+  .social-list__image {
+    &--mobile {
+      display: none;
+    }
+
+    &--default {
+      display: block;
+    }
+  }
+
+  .social-list__link {
+    margin: 0 13px 0 20px;
+    width: 22px;
   }
 }

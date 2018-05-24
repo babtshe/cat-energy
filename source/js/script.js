@@ -1,7 +1,16 @@
 document.addEventListener('DOMContentLoaded', ready);
 
 function ready() {
-  console.log('script is working');
+  var menuBtn = document.querySelector('.burger-menu__toggle-btn');
+  var menuList = document.querySelector('.burger-menu__list');
+  if (menuBtn && menuList) {
+    menuBtn.classList.remove('burger-menu__toggle-btn--nojs');
+    menuList.classList.add('burger-menu__list--closed');
+    menuBtn.addEventListener('click', function (event) {
+      menuList.classList.toggle('burger-menu__list--closed');
+      menuBtn.classList.toggle('burger-menu__toggle-btn--close');
+    });
+  }
 }
 
 function initMap() {

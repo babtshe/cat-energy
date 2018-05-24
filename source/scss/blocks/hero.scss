@@ -142,7 +142,7 @@
       min-height: 696px;
       background-position: right 0 center;
       background-image: url("../img/index-background-desktop@1x.jpg");
-      background-size: contain;
+      background-size: cover;
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
         background-image: url("../img/index-background-desktop@2x.jpg");
@@ -153,15 +153,18 @@
 
   .hero__inner {
     flex-wrap: wrap;
-    height: 600px;
+    min-height: 600px;
     padding: 23px 20px 0 77px;
+    position: relative;
   }
 
   .hero__image {
     width: 552px;
     height: 499px;
-    margin-left: -276px;
-    margin-top: -31px;
+    margin: 0;
+    top: -8px;
+    right: 218px;
+    position: absolute;
   }
 
   .hero__title {
@@ -171,6 +174,7 @@
 
   .hero__slogan {
     margin-left: 3px;
+    max-width: 40%;
   }
 
   .hero__btn {

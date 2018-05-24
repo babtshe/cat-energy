@@ -17,27 +17,40 @@
   right: 0;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 
   margin: 23px 23px 0 0;
 
-  @include sprite-icon-close;
+  @include sprite-icon-mobile-menu;
+
+  &--close {
+    @include sprite-icon-close;
+  }
+
+  &--nojs {
+    display: none;
+  }
+
+  &:focus {
+    outline: 1px dotted $theme-color-default;
+  }
 }
 
 .burger-menu__list {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: none;
   text-align: center;
   border-top: 1px solid #e6e6e6;
   flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
 
-  &--nojs {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
+  &--closed {
+    display: none;
   }
 }
 
@@ -76,6 +89,7 @@
   }
 
   .burger-menu__list {
+    display: flex;
     flex-direction: row;
     justify-content: flex-end;
     font-weight: normal;

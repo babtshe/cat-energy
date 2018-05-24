@@ -74,7 +74,7 @@ gulp.task('fonts:build', function () {
     .pipe(gulp.dest(path.build.fonts));
 });
 
-gulp.task('image:build',['raster-image:build', 'svg-image:build'], function () {
+gulp.task('image:build',['raster-image:build', 'webp-image:build', 'svg-image:build'], function () {
     reload({
       stream: true
     });

@@ -102,7 +102,7 @@ var svgsConfig = {
     view: {
       dest: '',
       sprite: 'sprite.svg',
-      prefix: "@mixin sprite-%s",
+      prefix: '@mixin sprite-%s',
       bust: false,
       render: {
         scss: {

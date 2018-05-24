@@ -100,13 +100,16 @@
   .catalog__list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    margin: 0 -31px;
   }
 
   .catalog__item {
     flex: 0 0 324px;
     border-top: none;
     padding: 0;
+    margin-left: 30px;
+    margin-right: 30px;
   }
 
   .catalog__more {
@@ -157,8 +160,19 @@
     padding-bottom: 3px;
   }
 
+  .catalog__list {
+    margin: 0 -40px;
+  }
+
   .catalog__item {
     flex: 0 0 245px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .catalog__more {
+    width: 243px;
+    flex: 0 0 243px;
   }
 
   .catalog__all-btn {

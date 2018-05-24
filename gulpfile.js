@@ -74,7 +74,7 @@ gulp.task('fonts:build', function () {
     .pipe(gulp.dest(path.build.fonts));
 });
 
-gulp.task('image:build',['webp-image:build', 'svg-image:build'], function () {
+gulp.task('image:build',['raster-image:build', 'webp-image:build', 'svg-image:build'], function () {
     reload({
       stream: true
     });
@@ -90,11 +90,11 @@ gulp.task('raster-image:build', function () {
 });
 
 gulp.task('webp-image:build', function () {
-  gulp.src(path.source.img.raster)//генерируем webp
+  gulp.src('source/img/**/*.png')//генерируем webp
   .pipe(imagemin([webp()]))
-  // .pipe(rename({
-  //   extname: '.webp'
-  // }))
+  .pipe(rename({
+    extname: '.webp'
+  }))
   .pipe(gulp.dest(path.build.img))
 });
 

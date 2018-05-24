@@ -78,6 +78,15 @@
 
     @include sprite-icon-right-arrow-long;
   }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.program__link:hover::after {
+  @include sprite-icon-right-arrow-verylong;
+  right: -8px;
 }
 
 @media (min-width: $media-tablet) {

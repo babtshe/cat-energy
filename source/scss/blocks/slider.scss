@@ -51,6 +51,14 @@
   line-height: 20px;
   padding: 0 10px;
   background-color: transparent;
+
+  &:hover {
+    border-bottom: 1px solid #989898;
+  }
+
+  &:active {
+    border-bottom: none;
+  }
 }
 
 .slider__range {
@@ -100,6 +108,7 @@
 
   .slider__image-wrapper {
     width: 708px;
+    min-height: 524px;
     margin-top: 65px;
     margin-bottom: 100px;
   }
@@ -147,6 +156,14 @@
     border-radius: 50%;
     border: 12px solid #ffffff;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15), 0 0 0 1px #cdcdcd;
+
+    &:hover {
+      box-shadow: 0 3px 6px 2px rgba(0, 0, 0, 0.15), 0 0 0 1px #cdcdcd;
+    }
+
+    &:active {
+      box-shadow: 0 3px 6px 2px rgba(0, 0, 0, 0.15), 0 0 0 2px $theme-color-default;
+    }
   }
 }
 

@@ -74,8 +74,8 @@ gulp.task('fonts:build', function () {
     .pipe(gulp.dest(path.build.fonts));
 });
 
-gulp.task('image:build',['raster-image:build','svg-image:build'], function () {
-
+gulp.task('image:build',['svg-image:build'], function () {
+//'raster-image:build',
     reload({
       stream: true
     });
@@ -161,7 +161,7 @@ gulp.task('style:build', function (callback) {
 gulp.task('build', [
   'html:build',
   'fonts:build',
-  //'image:build',
+  'image:build',
   'js:build',
   'style:build'
 ]);

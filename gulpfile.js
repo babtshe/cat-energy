@@ -74,8 +74,7 @@ gulp.task('fonts:build', function () {
     .pipe(gulp.dest(path.build.fonts));
 });
 
-gulp.task('image:build',['svg-image:build'], function () {
-//'raster-image:build',
+gulp.task('image:build',['raster-image:build', 'svg-image:build'], function () {
     reload({
       stream: true
     });
@@ -88,6 +87,9 @@ gulp.task('raster-image:build', function () {
     interlaced: true
   }))
   .pipe(gulp.dest(path.build.img))
+});
+
+gulp.task('webp-image:build', function () {
   gulp.src(path.source.img.raster)//генерируем webp
   .pipe(imagemin([webp()]))
   .pipe(rename({

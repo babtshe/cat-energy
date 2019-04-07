@@ -1,4 +1,4 @@
-var gulp = require('gulp'),
+const gulp = require('gulp'),
   prefixer = require('gulp-autoprefixer'),
   cssmin = require('gulp-clean-css'),
   imagemin = require('gulp-imagemin'),
@@ -17,7 +17,7 @@ var gulp = require('gulp'),
   concat = require('gulp-concat'),
   reload = browsersync.reload;
 
-var path = {
+const path = {
   build: {
     html: 'build/',
     fonts: 'build/fonts/',
@@ -46,9 +46,7 @@ var path = {
   clean: './build'
 };
 
-gulp.task('default', ['build', 'webserver', 'watch']);
-
-gulp.task('html:build', function (callback) {
+gulp.task('html:build', (done) => {
   pump([
     gulp.src(path.source.markup, {
       nodir: true
@@ -64,38 +62,35 @@ gulp.task('html:build', function (callback) {
     reload({
       stream: true
     })
-  ], callback);
+  ], done);
 });
 
-gulp.task('fonts:build', function () {
+gulp.task('fonts:build', (done) => {
   gulp.src(path.source.fonts, {
       nodir: true
     })
     .pipe(gulp.dest(path.build.fonts));
+  done();
 });
 
-gulp.task('image:build',['raster-image:build', 'webp-image:build', 'svg-image:build'], function () {
-    reload({
-      stream: true
-    });
-});
-
-gulp.task('raster-image:build', function () {
+gulp.task('raster-image:build', (done) => {
   gulp.src(path.source.img.raster)//оптимизируем растровые картинки
   .pipe(imagemin({
     progressive: true,
     interlaced: true
   }))
   .pipe(gulp.dest(path.build.img))
+  done();
 });
 
-gulp.task('webp-image:build', function () {
+gulp.task('webp-image:build', (done) => {
   gulp.src(path.source.img.raster)//генерируем webp
   .pipe(webp())
-  .pipe(gulp.dest(path.build.img))
+  .pipe(gulp.dest(path.build.img));
+  done();
 });
 
-var svgsConfig = {
+const svgsConfig = {
   //https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md
   //doc
   mode: {
@@ -111,23 +106,35 @@ var svgsConfig = {
         }
       }
     }
+  },
+  shape: {
+    spacing: {
+      padding: 1
+    }
   }
 }
 
 
-gulp.task('svg-image:build', function (callback) {
+gulp.task('svg-image:build', (done) => {
   pump([
     gulp.src(path.source.img.svg), //собираем спрайты
     svgsprite(svgsConfig),
     gulp.dest(path.build.img)
-  ], callback)
+  ]);
   gulp.src(path.source.img.svg)//копируем свг
   .pipe(imagemin())
-  .pipe(gulp.dest(path.build.img))
+  .pipe(gulp.dest(path.build.img));
+  done();
 });
 
+gulp.task('image:build',gulp.parallel('raster-image:build', 'webp-image:build', 'svg-image:build'), (done) => {
+  reload({
+    stream: true
+  });
+  done();
+});
 
-gulp.task('js:build', function (callback) {
+gulp.task('js:build', (done) => {
   pump([ //если будут ошибки pump наябедничает
     gulp.src(path.source.js),
     sourcemaps.init(),
@@ -138,10 +145,10 @@ gulp.task('js:build', function (callback) {
     reload({
       stream: true
     })
-  ], callback);
+  ], done);
 });
 
-gulp.task('style:build', function (callback) {
+gulp.task('style:build', (done) => {
   pump([
     gulp.src(path.source.style),
     wait(50), //fix for file not found error
@@ -154,19 +161,23 @@ gulp.task('style:build', function (callback) {
     reload({
       stream: true
     })
-  ], callback);
+  ], done);
 });
 
-gulp.task('build', [
+gulp.task('build', gulp.parallel(
   'html:build',
   'fonts:build',
   'image:build',
   'js:build',
-  'style:build'
-]);
+  'style:build',
+  (done) => {
+    done();
+  }
+));
 
-gulp.task('clean', function () {
+gulp.task('clean', (done) => {
   del(path.clean);
+  done();
 });
 
 var bsConfig = {
@@ -180,24 +191,18 @@ var bsConfig = {
   logPrefix: 'browsersync'
 };
 
-gulp.task('webserver', function () {
+gulp.task('webserver', (done) => {
   browsersync(bsConfig);
+  done();
 });
 
-gulp.task('watch', function () {
-  watch([path.watch.markup], function (event, callback) {
-    gulp.start('html:build');
-  });
-  watch([path.watch.fonts], function (event, callback) {
-    gulp.start('fonts:build');
-  });
-  watch([path.watch.img], function (event, callback) {
-    gulp.start('image:build');
-  });
-  watch([path.watch.js], function (event, callback) {
-    gulp.start('js:build');
-  });
-  watch(path.watch.style, function (event, callback) {
-    gulp.start('style:build');
-  });
+gulp.task('watch', ()=>{
+  watch([path.watch.markup], gulp.series('html:build'));
+  watch([path.watch.fonts], gulp.series('fonts:build'));
+  watch([path.watch.img], gulp.series('image:build'));
+  watch([path.watch.js], gulp.series('js:build'));
+  watch(path.watch.style, gulp.series('style:build'));
 });
+
+
+gulp.task('default', gulp.series('build', 'webserver', 'watch', done => done));

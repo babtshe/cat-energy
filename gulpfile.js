@@ -65,29 +65,26 @@ gulp.task('html:build', (done) => {
   ], done);
 });
 
-gulp.task('fonts:build', (done) => {
-  gulp.src(path.source.fonts, {
+gulp.task('fonts:build', () => {
+  return gulp.src(path.source.fonts, {
       nodir: true
     })
     .pipe(gulp.dest(path.build.fonts));
-  done();
 });
 
-gulp.task('raster-image:build', (done) => {
-  gulp.src(path.source.img.raster)//оптимизируем растровые картинки
+gulp.task('raster-image:build', () => {
+  return gulp.src(path.source.img.raster)//оптимизируем растровые картинки
   .pipe(imagemin({
     progressive: true,
     interlaced: true
   }))
-  .pipe(gulp.dest(path.build.img))
-  done();
+  .pipe(gulp.dest(path.build.img));
 });
 
-gulp.task('webp-image:build', (done) => {
-  gulp.src(path.source.img.raster)//генерируем webp
+gulp.task('webp-image:build', () => {
+  return gulp.src(path.source.img.raster)//генерируем webp
   .pipe(webp())
   .pipe(gulp.dest(path.build.img));
-  done();
 });
 
 const svgsConfig = {
@@ -115,23 +112,21 @@ const svgsConfig = {
 }
 
 
-gulp.task('svg-image:build', (done) => {
+gulp.task('svg-image:build', () => {
   pump([
     gulp.src(path.source.img.svg), //собираем спрайты
     svgsprite(svgsConfig),
     gulp.dest(path.build.img)
   ]);
-  gulp.src(path.source.img.svg)//копируем свг
+  return gulp.src(path.source.img.svg)//копируем свг
   .pipe(imagemin())
   .pipe(gulp.dest(path.build.img));
-  done();
 });
 
-gulp.task('image:build',gulp.parallel('raster-image:build', 'webp-image:build', 'svg-image:build'), (done) => {
-  reload({
+gulp.task('image:build', gulp.parallel('raster-image:build', 'webp-image:build', 'svg-image:build'), () => {
+  return reload({
     stream: true
   });
-  done();
 });
 
 gulp.task('js:build', (done) => {
@@ -164,21 +159,17 @@ gulp.task('style:build', (done) => {
   ], done);
 });
 
-gulp.task('build', gulp.parallel(
+gulp.task('clean', () => {
+  return del(path.clean);
+});
+
+gulp.task('build', gulp.series('clean', gulp.parallel(
   'html:build',
   'fonts:build',
   'image:build',
   'js:build',
-  'style:build',
-  (done) => {
-    done();
-  }
+  'style:build')
 ));
-
-gulp.task('clean', (done) => {
-  del(path.clean);
-  done();
-});
 
 var bsConfig = {
   server: {
@@ -191,9 +182,8 @@ var bsConfig = {
   logPrefix: 'browsersync'
 };
 
-gulp.task('webserver', (done) => {
-  browsersync(bsConfig);
-  done();
+gulp.task('webserver', () => {
+  return browsersync(bsConfig);
 });
 
 gulp.task('watch', ()=>{
@@ -205,4 +195,4 @@ gulp.task('watch', ()=>{
 });
 
 
-gulp.task('default', gulp.series('build', 'webserver', 'watch', done => done));
+gulp.task('default', gulp.series('build', 'webserver', 'watch'));
